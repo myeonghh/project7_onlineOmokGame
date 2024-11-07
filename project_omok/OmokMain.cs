@@ -219,6 +219,7 @@ namespace project_omok
                         margin + 눈Size * x - 화점Size/2, 
                         margin + 눈Size * y - 화점Size/2, 
                         화점Size, 화점Size);
+                    //ddd
                 }
         }
 
