@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="omok_pan_img" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\omok_pan_img.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="omokPanImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\omokPanImage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="kid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\kids.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,17 +130,8 @@
   <data name="sedol" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\sedol.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="main2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\main2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OH 木1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\OH 木.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="alphago" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\alphago.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="main3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\main3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="oh木intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\oh木intro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,17 +145,8 @@
   <data name="white" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\white.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="OH 木" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\OH 木.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="OhMok_intro" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\OhMok_intro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="mainImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\mainImg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OH_木-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\images\OH_木-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="gameoverImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\images\gameoverImg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

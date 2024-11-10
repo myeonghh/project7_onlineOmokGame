@@ -123,69 +123,9 @@ namespace project_omok.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap main2 {
-            get {
-                object obj = ResourceManager.GetObject("main2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap main3 {
-            get {
-                object obj = ResourceManager.GetObject("main3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
         internal static System.Drawing.Bitmap main4 {
             get {
                 object obj = ResourceManager.GetObject("main4", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap mainImg {
-            get {
-                object obj = ResourceManager.GetObject("mainImg", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap OH_木 {
-            get {
-                object obj = ResourceManager.GetObject("OH 木", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap OH_木_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("OH_木-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap OH_木1 {
-            get {
-                object obj = ResourceManager.GetObject("OH 木1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -206,26 +146,6 @@ namespace project_omok.Properties {
         internal static System.Drawing.Bitmap oh木intro {
             get {
                 object obj = ResourceManager.GetObject("oh木intro", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap omok_pan_img {
-            get {
-                object obj = ResourceManager.GetObject("omok_pan_img", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap omokPanImage {
-            get {
-                object obj = ResourceManager.GetObject("omokPanImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

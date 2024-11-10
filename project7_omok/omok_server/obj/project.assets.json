@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lms105\\.nuget\\packages\\": {}
+    "C:\\Users\\poius\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\lms105\\Desktop\\project\\lms4_Project\\project7_omok\\omok_server\\omok_server.csproj",
+      "projectUniqueName": "C:\\Users\\poius\\Desktop\\project7_omok\\omok_server\\omok_server.csproj",
       "projectName": "omok_server",
-      "projectPath": "C:\\Users\\lms105\\Desktop\\project\\lms4_Project\\project7_omok\\omok_server\\omok_server.csproj",
-      "packagesPath": "C:\\Users\\lms105\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\lms105\\Desktop\\project\\lms4_Project\\project7_omok\\omok_server\\obj\\",
+      "projectPath": "C:\\Users\\poius\\Desktop\\project7_omok\\omok_server\\omok_server.csproj",
+      "packagesPath": "C:\\Users\\poius\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\poius\\Desktop\\project7_omok\\omok_server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lms105\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\poius\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

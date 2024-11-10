@@ -19,7 +19,7 @@ namespace omok_server
             public TcpClient socket { get; set; } // 소켓 디스크립터
             public string nickname { get; set; } // 닉네임
             public STATUS status { get; set; }   // 상태 (대기중, 게임중)
-            public string level { get; set; }
+            public string level { get; set; } // 실력 (초보, 중수, 고수, 알파고)
 
             public Client(TcpClient socket, string nickname, STATUS status, string level)
             {
@@ -30,13 +30,13 @@ namespace omok_server
             }
         }
 
-        private List<Client> clientList = new List<Client>(); // 유저 정보 구조체 리스트
+        private List<Client> clientList = new List<Client>(); // 유저 정보 클래스 리스트
         private TcpListener server; // 서버 소켓을 생성하고 클라이언트 연결을 기다리는 역할
         private List<TcpClient> clients = new List<TcpClient>(); // 연결된 클라이언트를 저장
         private readonly object clientLock = new object(); // 다중 스레드에서 클라이언트 리스트 보호용 lock 객체
         private int roomNum = 1;
 
-        enum ACT {LOGIN, USERLIST, MATCHING, PUTSTONE, RESTART, QUIT};
+        enum ACT {LOGIN, USERLIST, MATCHING, PUTSTONE, RESTART, QUIT, GIVEUP, CHAT, LOGOUT};
         enum STATUS {WAITING, PLAYING};
         enum STONE { NONE, BLACK, WHITE };
 
@@ -60,7 +60,7 @@ namespace omok_server
             while (true)
             {
                 TcpClient clientSocket = server.AcceptTcpClient(); // 클라이언트 연결을 기다림
-                lock (clientLock) // 다중 스레드 환경에서 안전하게 클라이언트를 추가
+                lock (clientLock)
                 {
                     clients.Add(clientSocket); // 연결된 클라이언트를 리스트에 추가
                 }
@@ -77,15 +77,15 @@ namespace omok_server
         private void HandleClient(TcpClient clientSocket)
         {
             NetworkStream stream = clientSocket.GetStream(); // 클라이언트와의 데이터 송수신을 위한 스트림
-            byte[] buffer = new byte[1024]; // 데이터를 저장할 버퍼
+            byte[] buffer = new byte[1024];
             while (true) // 클라이언트가 연결된 동안 계속 실행
             {
                 try
                 {
-                    int bytesRead = stream.Read(buffer, 0, buffer.Length); // 데이터를 읽음
+                    int bytesRead = stream.Read(buffer, 0, buffer.Length); // 데이터를 read
                     if (bytesRead > 0) // 데이터가 있으면
                     {
-                        string data = Encoding.UTF8.GetString(buffer, 0, bytesRead); // UTF-8로 디코딩
+                        string data = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                         Console.WriteLine($"수신: {data}"); // 수신된 데이터 출력
 
                         string[] parts = data.Split('/');                
@@ -145,6 +145,7 @@ namespace omok_server
                         if (client.nickname == receiverNick)
                         {
                             SendMessage(client.socket, (int)ACT.PUTSTONE, putStoneInfo);
+                            break;
                         }
                     }
                     break;
@@ -154,15 +155,55 @@ namespace omok_server
                         if (client.nickname == receiverNick)
                         {
                             SendMessage(client.socket, (int)ACT.RESTART);
+                            break;
                         }
                     }
                     break;
                 case ACT.QUIT:
+                    int find = 0;
                     foreach (Client client in clientList)
                     {
                         if (client.nickname == receiverNick)
                         {
                             SendMessage(client.socket, (int)ACT.QUIT);
+                            client.status = STATUS.WAITING;
+                            find++;
+                        }
+                        else if (client.nickname == senderNick)
+                        {
+                            client.status = STATUS.WAITING;
+                            find++;
+                        }
+                        if (find == 2) break;
+                    }
+                    break;
+                case ACT.GIVEUP:
+                    foreach (Client client in clientList)
+                    {
+                        if (client.nickname == receiverNick)
+                        {
+                            SendMessage(client.socket, (int)ACT.GIVEUP);
+                            break;
+                        }
+                    }
+                    break;
+                case ACT.CHAT:
+                    foreach (Client client in clientList)
+                    {
+                        if (client.nickname == receiverNick)
+                        {
+                            SendMessage(client.socket, (int)ACT.CHAT, msg, senderNick);
+                            break;
+                        }
+                    }
+                    break;
+                case ACT.LOGOUT:
+                    foreach (Client client in clientList)
+                    {
+                        if (client.nickname == senderNick)
+                        {
+                            clientList.Remove(client);
+                            break;
                         }
                     }
                     break;
@@ -180,7 +221,7 @@ namespace omok_server
                 bool check = false;
                 foreach (Client client in clientList)
                 {
-                    if (client.nickname == receiverNick)
+                    if (client.nickname == receiverNick && client.status == STATUS.WAITING)
                     {
                         SendMessage(client.socket, (int)ACT.MATCHING, "request", senderNick);
                         check = true;

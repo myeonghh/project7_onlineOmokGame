@@ -37,6 +37,7 @@
             this.nickNameText = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.refreshBtn = new System.Windows.Forms.Button();
             this.matchingBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,6 +45,9 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.sendChatBtn = new System.Windows.Forms.Button();
+            this.chatTextBox = new System.Windows.Forms.TextBox();
+            this.giveUpBtn = new System.Windows.Forms.Button();
             this.player2StoneImg = new System.Windows.Forms.PictureBox();
             this.player1StoneImg = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -61,9 +65,9 @@
             this.restartBtn = new System.Windows.Forms.Button();
             this.gameoverImg = new System.Windows.Forms.PictureBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.파일ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.보기ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.수순ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sequenceShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.sequenceHide = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -83,12 +87,15 @@
             this.tabControlMain.Controls.Add(this.tabPage1);
             this.tabControlMain.Controls.Add(this.tabPage2);
             this.tabControlMain.Controls.Add(this.tabPage3);
-            this.tabControlMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
+            this.tabControlMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabControlMain.Font = new System.Drawing.Font("Arial", 1.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMain.Location = new System.Drawing.Point(0, -1);
+            this.tabControlMain.Multiline = true;
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
             this.tabControlMain.Size = new System.Drawing.Size(927, 747);
             this.tabControlMain.TabIndex = 2;
+            this.tabControlMain.TabStop = false;
             // 
             // tabPage1
             // 
@@ -101,12 +108,12 @@
             this.tabPage1.Controls.Add(this.serverJoinBtn);
             this.tabPage1.Controls.Add(this.nickNameText);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage1.Location = new System.Drawing.Point(4, 12);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(919, 721);
+            this.tabPage1.Size = new System.Drawing.Size(919, 731);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
             // 
             // label3
             // 
@@ -139,11 +146,12 @@
             // 
             this.severConnectLabel.AutoSize = true;
             this.severConnectLabel.Font = new System.Drawing.Font("맑은 고딕", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.severConnectLabel.Location = new System.Drawing.Point(158, 630);
+            this.severConnectLabel.Location = new System.Drawing.Point(158, 636);
             this.severConnectLabel.Name = "severConnectLabel";
             this.severConnectLabel.Size = new System.Drawing.Size(80, 21);
             this.severConnectLabel.TabIndex = 7;
             this.severConnectLabel.Text = "서버 연결";
+            this.severConnectLabel.UseWaitCursor = true;
             // 
             // serverJoinBtn
             // 
@@ -181,22 +189,34 @@
             // 
             this.tabPage2.BackgroundImage = global::project_omok.Properties.Resources.main4;
             this.tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.tabPage2.Controls.Add(this.logoutBtn);
             this.tabPage2.Controls.Add(this.refreshBtn);
             this.tabPage2.Controls.Add(this.matchingBtn);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.userListView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage2.Location = new System.Drawing.Point(4, 12);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(919, 721);
+            this.tabPage2.Size = new System.Drawing.Size(919, 731);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // logoutBtn
+            // 
+            this.logoutBtn.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.logoutBtn.Location = new System.Drawing.Point(25, 15);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(90, 30);
+            this.logoutBtn.TabIndex = 4;
+            this.logoutBtn.Text = "로그아웃";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // refreshBtn
             // 
             this.refreshBtn.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.refreshBtn.Location = new System.Drawing.Point(607, 45);
+            this.refreshBtn.Location = new System.Drawing.Point(607, 54);
             this.refreshBtn.Name = "refreshBtn";
             this.refreshBtn.Size = new System.Drawing.Size(90, 30);
             this.refreshBtn.TabIndex = 3;
@@ -219,17 +239,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(230, 45);
+            this.label2.Location = new System.Drawing.Point(383, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 30);
+            this.label2.Size = new System.Drawing.Size(127, 30);
             this.label2.TabIndex = 1;
-            this.label2.Text = "유저목록";
+            this.label2.Text = "<유저목록>";
             // 
             // userListView
             // 
             this.userListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.userListView.Font = new System.Drawing.Font("맑은 고딕", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.userListView.FullRowSelect = true;
             this.userListView.HideSelection = false;
             this.userListView.Location = new System.Drawing.Point(222, 90);
@@ -242,17 +263,20 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "닉네임";
-            this.columnHeader1.Width = 200;
+            this.columnHeader1.Width = 280;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "실력";
-            this.columnHeader2.Width = 150;
+            this.columnHeader2.Width = 191;
             // 
             // tabPage3
             // 
             this.tabPage3.BackgroundImage = global::project_omok.Properties.Resources.main;
             this.tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tabPage3.Controls.Add(this.sendChatBtn);
+            this.tabPage3.Controls.Add(this.chatTextBox);
+            this.tabPage3.Controls.Add(this.giveUpBtn);
             this.tabPage3.Controls.Add(this.player2StoneImg);
             this.tabPage3.Controls.Add(this.player1StoneImg);
             this.tabPage3.Controls.Add(this.label5);
@@ -265,13 +289,44 @@
             this.tabPage3.Controls.Add(this.playerImg1);
             this.tabPage3.Controls.Add(this.panel1);
             this.tabPage3.Controls.Add(this.menuStrip1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.tabPage3.Location = new System.Drawing.Point(4, 12);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(919, 721);
+            this.tabPage3.Size = new System.Drawing.Size(919, 731);
             this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // sendChatBtn
+            // 
+            this.sendChatBtn.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.sendChatBtn.Location = new System.Drawing.Point(865, 683);
+            this.sendChatBtn.Name = "sendChatBtn";
+            this.sendChatBtn.Size = new System.Drawing.Size(45, 28);
+            this.sendChatBtn.TabIndex = 20;
+            this.sendChatBtn.Text = "전송";
+            this.sendChatBtn.UseVisualStyleBackColor = true;
+            this.sendChatBtn.Click += new System.EventHandler(this.sendChatBtn_Click);
+            // 
+            // chatTextBox
+            // 
+            this.chatTextBox.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.chatTextBox.Location = new System.Drawing.Point(654, 686);
+            this.chatTextBox.Name = "chatTextBox";
+            this.chatTextBox.Size = new System.Drawing.Size(205, 25);
+            this.chatTextBox.TabIndex = 19;
+            this.chatTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.chatTextBox_KeyDown);
+            // 
+            // giveUpBtn
+            // 
+            this.giveUpBtn.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.giveUpBtn.Location = new System.Drawing.Point(551, 30);
+            this.giveUpBtn.Name = "giveUpBtn";
+            this.giveUpBtn.Size = new System.Drawing.Size(90, 36);
+            this.giveUpBtn.TabIndex = 18;
+            this.giveUpBtn.Text = "기권하기";
+            this.giveUpBtn.UseVisualStyleBackColor = true;
+            this.giveUpBtn.Click += new System.EventHandler(this.giveUpBtn_Click);
             // 
             // player2StoneImg
             // 
@@ -315,7 +370,7 @@
             // 
             this.turnLabel.AutoSize = true;
             this.turnLabel.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.turnLabel.Location = new System.Drawing.Point(232, 39);
+            this.turnLabel.Location = new System.Drawing.Point(240, 36);
             this.turnLabel.Name = "turnLabel";
             this.turnLabel.Size = new System.Drawing.Size(83, 30);
             this.turnLabel.TabIndex = 13;
@@ -323,10 +378,13 @@
             // 
             // chatRichBox
             // 
+            this.chatRichBox.BackColor = System.Drawing.Color.White;
+            this.chatRichBox.Font = new System.Drawing.Font("굴림", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.chatRichBox.Location = new System.Drawing.Point(654, 501);
             this.chatRichBox.Name = "chatRichBox";
+            this.chatRichBox.ReadOnly = true;
             this.chatRichBox.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.chatRichBox.Size = new System.Drawing.Size(256, 214);
+            this.chatRichBox.Size = new System.Drawing.Size(256, 179);
             this.chatRichBox.TabIndex = 12;
             this.chatRichBox.Text = "";
             // 
@@ -352,6 +410,7 @@
             // 
             // playerImg2
             // 
+            this.playerImg2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.playerImg2.Location = new System.Drawing.Point(679, 299);
             this.playerImg2.Name = "playerImg2";
             this.playerImg2.Size = new System.Drawing.Size(208, 151);
@@ -361,6 +420,7 @@
             // 
             // playerImg1
             // 
+            this.playerImg1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.playerImg1.Location = new System.Drawing.Point(679, 72);
             this.playerImg1.Name = "playerImg1";
             this.playerImg1.Size = new System.Drawing.Size(208, 151);
@@ -370,6 +430,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.gameoverPanel);
             this.panel1.Location = new System.Drawing.Point(16, 72);
             this.panel1.Name = "panel1";
@@ -395,8 +456,8 @@
             // restartWaitLabel
             // 
             this.restartWaitLabel.AutoSize = true;
-            this.restartWaitLabel.Font = new System.Drawing.Font("굴림", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.restartWaitLabel.Location = new System.Drawing.Point(210, 187);
+            this.restartWaitLabel.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.restartWaitLabel.Location = new System.Drawing.Point(120, 187);
             this.restartWaitLabel.Name = "restartWaitLabel";
             this.restartWaitLabel.Size = new System.Drawing.Size(0, 16);
             this.restartWaitLabel.TabIndex = 4;
@@ -437,32 +498,38 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.파일ToolStripMenuItem1,
-            this.보기ToolStripMenuItem1,
             this.수순ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(3, 3);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(913, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(913, 28);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip2";
             // 
-            // 파일ToolStripMenuItem1
-            // 
-            this.파일ToolStripMenuItem1.Name = "파일ToolStripMenuItem1";
-            this.파일ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.파일ToolStripMenuItem1.Text = "파일";
-            // 
-            // 보기ToolStripMenuItem1
-            // 
-            this.보기ToolStripMenuItem1.Name = "보기ToolStripMenuItem1";
-            this.보기ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
-            this.보기ToolStripMenuItem1.Text = "보기";
-            // 
             // 수순ToolStripMenuItem1
             // 
+            this.수순ToolStripMenuItem1.BackColor = System.Drawing.Color.Gainsboro;
+            this.수순ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sequenceShow,
+            this.sequenceHide});
+            this.수순ToolStripMenuItem1.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.수순ToolStripMenuItem1.Image = global::project_omok.Properties.Resources.black;
             this.수순ToolStripMenuItem1.Name = "수순ToolStripMenuItem1";
-            this.수순ToolStripMenuItem1.Size = new System.Drawing.Size(43, 20);
+            this.수순ToolStripMenuItem1.Size = new System.Drawing.Size(67, 24);
             this.수순ToolStripMenuItem1.Text = "수순";
+            // 
+            // sequenceShow
+            // 
+            this.sequenceShow.Name = "sequenceShow";
+            this.sequenceShow.Size = new System.Drawing.Size(143, 24);
+            this.sequenceShow.Text = "수순 보기";
+            this.sequenceShow.Click += new System.EventHandler(this.sequenceShow_Click);
+            // 
+            // sequenceHide
+            // 
+            this.sequenceHide.Name = "sequenceHide";
+            this.sequenceHide.Size = new System.Drawing.Size(143, 24);
+            this.sequenceHide.Text = "수순 끄기";
+            this.sequenceHide.Click += new System.EventHandler(this.sequenceHide_Click);
             // 
             // OmokMain
             // 
@@ -501,8 +568,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 보기ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 수순ToolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox nickNameText;
@@ -531,5 +596,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox player2StoneImg;
         private System.Windows.Forms.PictureBox player1StoneImg;
+        private System.Windows.Forms.Button giveUpBtn;
+        private System.Windows.Forms.Button sendChatBtn;
+        private System.Windows.Forms.TextBox chatTextBox;
+        private System.Windows.Forms.ToolStripMenuItem sequenceShow;
+        private System.Windows.Forms.ToolStripMenuItem sequenceHide;
+        private System.Windows.Forms.Button logoutBtn;
     }
 }
